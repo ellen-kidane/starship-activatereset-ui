@@ -1,0 +1,14 @@
+@require '../vars.styl';
+
+.container
+  box-sizing: border-box
+  margin: 0 auto
+  max-width: $desktop - (2 * $gap)
+  position: relative
+  width: $desktop - (2 * $gap)
+
+  &.is-fluid
+    margin-left: 0
+    margin-right: 0
+    max-width: none
+    width: auto

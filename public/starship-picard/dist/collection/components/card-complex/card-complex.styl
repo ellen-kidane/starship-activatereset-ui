@@ -1,0 +1,43 @@
+@require '../../styles/components/card.styl'
+@require '../../styles/elements/divider.styl'
+@require '../../styles/mixins.styl'
+
+$default-card-width ?= 344px
+
+:host
+  typography-basics()
+
+  $divider-margin ?= 16px 0 0
+
+  .card-complex
+    @extend .card
+    box-sizing: border-box
+    min-height: 185px
+    padding: 0
+    width: $default-card-width
+
+    .card-complex-header
+      background-color: $grey-5
+      box-sizing: border-box
+      color: $grey-80
+      font-size: $size-14
+      font-weight: bold
+      height: 53px
+      padding: 24px 24px 12px
+      width: $default-card-width
+
+    .card-complex-body
+      font-size: $size-12
+      line-height: 20px
+      min-height: 58px
+      padding: 12px 24px 0
+
+    .card-complex-footer
+      height: 40px
+      padding: 0 16px
+
+      .divider
+        margin: $divider-margin
+
+      .card-complex-footer-container
+        padding: 0 8px

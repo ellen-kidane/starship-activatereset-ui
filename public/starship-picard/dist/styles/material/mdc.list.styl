@@ -1,0 +1,432 @@
+/*
+ Material Components for the Web
+ Copyright (c) 2018 Google Inc.
+ License: Apache-2.0
+*/
+@keyframes mdc-ripple-fg-radius-in
+  from
+    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1)
+    transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1)
+    -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1)
+    -webkit-transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1)
+
+  to
+    transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1))
+    -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1))
+
+@keyframes mdc-ripple-fg-radius-in
+  from
+    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1)
+    transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1)
+    -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1)
+    -webkit-transform: translate(var(--mdc-ripple-fg-translate-start, 0)) scale(1)
+
+  to
+    transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1))
+    -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1))
+
+@keyframes mdc-ripple-fg-opacity-in
+  from
+    animation-timing-function: linear
+    opacity: 0
+    -webkit-animation-timing-function: linear
+
+  to
+    opacity: var(--mdc-ripple-fg-opacity, 0)
+
+@keyframes mdc-ripple-fg-opacity-in
+  from
+    animation-timing-function: linear
+    opacity: 0
+    -webkit-animation-timing-function: linear
+
+  to
+    opacity: var(--mdc-ripple-fg-opacity, 0)
+
+@keyframes mdc-ripple-fg-opacity-out
+  from
+    animation-timing-function: linear
+    opacity: var(--mdc-ripple-fg-opacity, 0)
+    -webkit-animation-timing-function: linear
+
+  to
+    opacity: 0
+
+@keyframes mdc-ripple-fg-opacity-out
+  from
+    animation-timing-function: linear
+    opacity: var(--mdc-ripple-fg-opacity, 0)
+    -webkit-animation-timing-function: linear
+
+  to
+    opacity: 0
+
+.mdc-ripple-surface--test-edge-var-bug
+  visibility: hidden
+  --mdc-ripple-surface-test-edge-var: 1px solid #000
+
+.mdc-ripple-surface--test-edge-var-bug::before
+  border: var(--mdc-ripple-surface-test-edge-var)
+
+.mdc-list
+  color: rgba(0, 0, 0, 0.87)
+  /* @alternate */
+  color: var(--mdc-theme-text-primary-on-background, rgba(0, 0, 0, 0.87))
+  font-family: Roboto, sans-serif
+  font-size: 1rem
+  font-weight: 400
+  letter-spacing: 0.00937em
+  line-height: 1.75rem
+  /* @alternate */
+  line-height: 1.5rem
+  list-style-type: none
+  margin: 0
+  padding: 8px 0
+  text-decoration: inherit
+  text-transform: inherit
+  -moz-osx-font-smoothing: grayscale
+  -webkit-font-smoothing: antialiased
+
+.mdc-list-item__secondary-text
+  color: rgba(0, 0, 0, 0.54)
+  /* @alternate */
+  color: var(--mdc-theme-text-secondary-on-background, rgba(0, 0, 0, 0.54))
+
+.mdc-list-item__graphic
+  background-color: transparent
+
+.mdc-list-item__graphic
+  color: rgba(0, 0, 0, 0.38)
+  /* @alternate */
+  color: var(--mdc-theme-text-icon-on-background, rgba(0, 0, 0, 0.38))
+
+.mdc-list-item__meta
+  color: rgba(0, 0, 0, 0.38)
+  /* @alternate */
+  color: var(--mdc-theme-text-hint-on-background, rgba(0, 0, 0, 0.38))
+
+.mdc-list--dense
+  font-size: 0.812rem
+  padding-bottom: 4px
+  padding-top: 4px
+
+.mdc-list-item
+  align-items: center
+  display: flex
+  height: 48px
+  justify-content: flex-start
+  overflow: hidden
+  padding: 0 16px
+  position: relative
+
+.mdc-list-item:focus
+  outline: none
+
+.mdc-list-item--selected, .mdc-list-item--activated
+  color: #6200ee
+  /* @alternate */
+  color: var(--mdc-theme-primary, #6200ee)
+
+.mdc-list-item--selected .mdc-list-item__graphic, .mdc-list-item--activated .mdc-list-item__graphic
+  color: #6200ee
+  /* @alternate */
+  color: var(--mdc-theme-primary, #6200ee)
+
+.mdc-list-item__graphic
+  align-items: center
+  display: inline-flex
+  flex-shrink: 0
+  height: 24px
+  justify-content: center
+  /* @noflip */
+  margin-left: 0
+  /* @noflip */
+  margin-right: 32px
+  width: 24px
+
+.mdc-list-item[dir='rtl'] .mdc-list-item__graphic, [dir='rtl'] .mdc-list-item .mdc-list-item__graphic
+  /* @noflip */
+  margin-left: 32px
+  /* @noflip */
+  margin-right: 0
+
+.mdc-list-item__meta
+  /* @noflip */
+  margin-left: auto
+  /* @noflip */
+  margin-right: 0
+
+.mdc-list-item[dir='rtl'] .mdc-list-item__meta, [dir='rtl'] .mdc-list-item .mdc-list-item__meta
+  /* @noflip */
+  margin-left: 0
+  /* @noflip */
+  margin-right: auto
+
+.mdc-list-item__text, .mdc-list-item__secondary-text
+  display: block
+  overflow: hidden
+  text-overflow: ellipsis
+  white-space: nowrap
+
+.mdc-list-item__secondary-text
+  font-family: Roboto, sans-serif
+  font-size: 0.875rem
+  font-weight: 400
+  letter-spacing: 0.01786em
+  line-height: 1.25rem
+  text-decoration: inherit
+  text-transform: inherit
+  -moz-osx-font-smoothing: grayscale
+  -webkit-font-smoothing: antialiased
+
+.mdc-list--dense .mdc-list-item__secondary-text
+  font-size: inherit
+
+.mdc-list--dense .mdc-list-item
+  height: 40px
+
+.mdc-list--dense .mdc-list-item__graphic
+  height: 20px
+  /* @noflip */
+  margin-left: 0
+  /* @noflip */
+  margin-right: 36px
+  width: 20px
+
+.mdc-list-item[dir='rtl'] .mdc-list--dense .mdc-list-item__graphic, [dir='rtl'] .mdc-list-item .mdc-list--dense .mdc-list-item__graphic
+  /* @noflip */
+  margin-left: 36px
+  /* @noflip */
+  margin-right: 0
+
+.mdc-list--avatar-list .mdc-list-item
+  height: 56px
+
+.mdc-list--avatar-list .mdc-list-item__graphic
+  border-radius: 50%
+  height: 40px
+  /* @noflip */
+  margin-left: 0
+  /* @noflip */
+  margin-right: 16px
+  width: 40px
+
+.mdc-list-item[dir='rtl'] .mdc-list--avatar-list .mdc-list-item__graphic, [dir='rtl'] .mdc-list-item .mdc-list--avatar-list .mdc-list-item__graphic
+  /* @noflip */
+  margin-left: 16px
+  /* @noflip */
+  margin-right: 0
+
+:not(.mdc-list--non-interactive) > .mdc-list-item
+  will-change: transform, opacity
+  --mdc-ripple-fg-scale: 1
+  --mdc-ripple-fg-size: 0
+  --mdc-ripple-fg-translate-end: 0
+  --mdc-ripple-fg-translate-start: 0
+  --mdc-ripple-left: 0
+  --mdc-ripple-top: 0
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+
+:not(.mdc-list--non-interactive) > .mdc-list-item::before, :not(.mdc-list--non-interactive) > .mdc-list-item::after
+  border-radius: 50%
+  content: ''
+  opacity: 0
+  pointer-events: none
+  position: absolute
+
+:not(.mdc-list--non-interactive) > .mdc-list-item::before
+  transition: opacity 15ms linear
+  z-index: 1
+
+:not(.mdc-list--non-interactive) > .mdc-list-item.mdc-ripple-upgraded::before
+  transform: scale(var(--mdc-ripple-fg-scale, 1))
+  -webkit-transform: scale(var(--mdc-ripple-fg-scale, 1))
+
+:not(.mdc-list--non-interactive) > .mdc-list-item.mdc-ripple-upgraded::after
+  /* @noflip */
+  left: 0
+  top: 0
+  transform: scale(0)
+  transform-origin: center center
+  -webkit-transform: scale(0)
+  -webkit-transform-origin: center center
+
+:not(.mdc-list--non-interactive) > .mdc-list-item.mdc-ripple-upgraded--unbounded::after
+  /* @noflip */
+  left: var(--mdc-ripple-left, 0)
+  top: var(--mdc-ripple-top, 0)
+
+:not(.mdc-list--non-interactive) > .mdc-list-item.mdc-ripple-upgraded--foreground-activation::after
+  animation: 225ms mdc-ripple-fg-radius-in forwards, 75ms mdc-ripple-fg-opacity-in forwards
+  -webkit-animation: 225ms mdc-ripple-fg-radius-in forwards, 75ms mdc-ripple-fg-opacity-in forwards
+
+:not(.mdc-list--non-interactive) > .mdc-list-item.mdc-ripple-upgraded--foreground-deactivation::after
+  animation: 150ms mdc-ripple-fg-opacity-out
+  transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1))
+  -webkit-animation: 150ms mdc-ripple-fg-opacity-out
+  -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1))
+
+:not(.mdc-list--non-interactive) > .mdc-list-item::before, :not(.mdc-list--non-interactive) > .mdc-list-item::after
+  height: 200%
+  /* @noflip */
+  left: calc(50% - 100%)
+  top: calc(50% - 100%)
+  width: 200%
+
+:not(.mdc-list--non-interactive) > .mdc-list-item.mdc-ripple-upgraded::after
+  height: var(--mdc-ripple-fg-size, 100%)
+  width: var(--mdc-ripple-fg-size, 100%)
+
+:not(.mdc-list--non-interactive) > .mdc-list-item::before, :not(.mdc-list--non-interactive) > .mdc-list-item::after
+  background-color: white
+
+:not(.mdc-list--non-interactive) > .mdc-list-item:hover::before
+  opacity: 0.04
+
+:not(.mdc-list--non-interactive) > .mdc-list-item:not(.mdc-ripple-upgraded):focus::before, :not(.mdc-list--non-interactive) > .mdc-list-item.mdc-ripple-upgraded--background-focused::before
+  opacity: 0.12
+  transition-duration: 75ms
+
+:not(.mdc-list--non-interactive) > .mdc-list-item:not(.mdc-ripple-upgraded)::after
+  transition: opacity 150ms linear
+
+:not(.mdc-list--non-interactive) > .mdc-list-item:not(.mdc-ripple-upgraded):active::after
+  opacity: 0.16
+  transition-duration: 75ms
+
+:not(.mdc-list--non-interactive) > .mdc-list-item.mdc-ripple-upgraded
+  --mdc-ripple-fg-opacity: 0.16
+
+:not(.mdc-list--non-interactive) > .mdc-list-item--activated::before
+  opacity: 0.12
+
+:not(.mdc-list--non-interactive) > .mdc-list-item--activated::before, :not(.mdc-list--non-interactive) > .mdc-list-item--activated::after
+  background-color: #6200ee
+
+@supports not (-ms-ime-align: auto)
+  :not(.mdc-list--non-interactive) > .mdc-list-item--activated::before, :not(.mdc-list--non-interactive) > .mdc-list-item--activated::after
+    /* @alternate */
+    background-color: var(--mdc-theme-primary, #6200ee)
+
+:not(.mdc-list--non-interactive) > .mdc-list-item--activated:hover::before
+  opacity: 0.16
+
+:not(.mdc-list--non-interactive) > .mdc-list-item--activated:not(.mdc-ripple-upgraded):focus::before, :not(.mdc-list--non-interactive) > .mdc-list-item--activated.mdc-ripple-upgraded--background-focused::before
+  opacity: 0.24
+  transition-duration: 75ms
+
+:not(.mdc-list--non-interactive) > .mdc-list-item--activated:not(.mdc-ripple-upgraded)::after
+  transition: opacity 150ms linear
+
+:not(.mdc-list--non-interactive) > .mdc-list-item--activated:not(.mdc-ripple-upgraded):active::after
+  opacity: 0.28
+  transition-duration: 75ms
+
+:not(.mdc-list--non-interactive) > .mdc-list-item--activated.mdc-ripple-upgraded
+  --mdc-ripple-fg-opacity: 0.28
+
+:not(.mdc-list--non-interactive) > .mdc-list-item--selected::before
+  opacity: 0.08
+
+:not(.mdc-list--non-interactive) > .mdc-list-item--selected::before, :not(.mdc-list--non-interactive) > .mdc-list-item--selected::after
+  background-color: #6200ee
+
+@supports not (-ms-ime-align: auto)
+  :not(.mdc-list--non-interactive) > .mdc-list-item--selected::before, :not(.mdc-list--non-interactive) > .mdc-list-item--selected::after
+    /* @alternate */
+    background-color: var(--mdc-theme-primary, #6200ee)
+
+:not(.mdc-list--non-interactive) > .mdc-list-item--selected:hover::before
+  opacity: 0.12
+
+:not(.mdc-list--non-interactive) > .mdc-list-item--selected:not(.mdc-ripple-upgraded):focus::before, :not(.mdc-list--non-interactive) > .mdc-list-item--selected.mdc-ripple-upgraded--background-focused::before
+  opacity: 0.2
+  transition-duration: 75ms
+
+:not(.mdc-list--non-interactive) > .mdc-list-item--selected:not(.mdc-ripple-upgraded)::after
+  transition: opacity 150ms linear
+
+:not(.mdc-list--non-interactive) > .mdc-list-item--selected:not(.mdc-ripple-upgraded):active::after
+  opacity: 0.24
+  transition-duration: 75ms
+
+:not(.mdc-list--non-interactive) > .mdc-list-item--selected.mdc-ripple-upgraded
+  --mdc-ripple-fg-opacity: 0.24
+
+.mdc-list--two-line .mdc-list-item
+  height: 72px
+
+.mdc-list--two-line.mdc-list--dense .mdc-list-item
+  height: 60px
+
+.mdc-list--avatar-list.mdc-list--dense .mdc-list-item
+  height: 48px
+
+.mdc-list--avatar-list.mdc-list--dense .mdc-list-item__graphic
+  height: 36px
+  /* @noflip */
+  margin-left: 0
+  /* @noflip */
+  margin-right: 20px
+  width: 36px
+
+.mdc-list-item[dir='rtl'] .mdc-list--avatar-list.mdc-list--dense .mdc-list-item__graphic, [dir='rtl'] .mdc-list-item .mdc-list--avatar-list.mdc-list--dense .mdc-list-item__graphic
+  /* @noflip */
+  margin-left: 20px
+  /* @noflip */
+  margin-right: 0
+
+a.mdc-list-item
+  color: inherit
+  text-decoration: none
+
+.mdc-list-divider
+  border: none
+  border-bottom-style: solid
+  border-bottom-width: 1px
+  height: 0
+  margin: 0
+
+.mdc-list-divider
+  border-bottom-color: rgba(0, 0, 0, 0.12)
+
+.mdc-list-divider--padded
+  margin: 0 16px
+
+.mdc-list-divider--inset
+  /* @noflip */
+  margin-left: 72px
+  /* @noflip */
+  margin-right: 0
+  width: calc(100% - 72px)
+
+.mdc-list-group[dir='rtl'] .mdc-list-divider--inset, [dir='rtl'] .mdc-list-group .mdc-list-divider--inset
+  /* @noflip */
+  margin-left: 0
+  /* @noflip */
+  margin-right: 72px
+
+.mdc-list-divider--inset.mdc-list-divider--padded
+  width: calc(100% - 72px - 16px)
+
+.mdc-list-group .mdc-list
+  padding: 0
+
+.mdc-list-group__subheader
+  font-family: Roboto, sans-serif
+  font-size: 1rem
+  font-weight: 400
+  letter-spacing: 0.00937em
+  line-height: 1.75rem
+  margin: 0.75rem 16px
+  text-decoration: inherit
+  text-transform: inherit
+  -moz-osx-font-smoothing: grayscale
+  -webkit-font-smoothing: antialiased
+
+.mdc-list-group__subheader
+  color: rgba(0, 0, 0, 0.87)
+  /* @alternate */
+  color: var(--mdc-theme-text-primary-on-background, rgba(0, 0, 0, 0.87))
+
+/* # sourceMappingURL=mdc.list.css.map */

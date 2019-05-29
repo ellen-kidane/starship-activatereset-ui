@@ -1,0 +1,123 @@
+/*
+ Material Components for the Web
+ Copyright (c) 2018 Google Inc.
+ License: Apache-2.0
+*/
+.mdc-menu
+  background-color: #fff
+  /* @alternate */
+  background-color: var(--mdc-theme-background, #fff)
+  border-radius: 2px
+  box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12)
+  box-sizing: border-box
+  display: none
+  margin: 0
+  max-height: calc(100vh - 32px)
+  max-width: calc(100vw - 32px)
+  min-width: 170px
+  opacity: 0
+  overflow-x: hidden
+  overflow-y: auto
+  padding: 0
+  position: absolute
+  transform: scale(1)
+  transform-origin: top left
+  white-space: nowrap
+  will-change: transform, opacity
+  z-index: 4
+  -webkit-transform: scale(1)
+  -webkit-transform-origin: top left
+
+.mdc-menu:focus
+  outline: none
+
+.mdc-menu--animating-open
+  display: inline-block
+  opacity: 0
+  overflow-y: hidden
+  transform: scale(0.8)
+  transition: opacity 0.03s linear, -webkit-transform 0.12s cubic-bezier(0, 0, 0.2, 1)
+  transition: opacity 0.03s linear, transform 0.12s cubic-bezier(0, 0, 0.2, 1)
+  transition: opacity 0.03s linear, transform 0.12s cubic-bezier(0, 0, 0.2, 1), -webkit-transform 0.12s cubic-bezier(0, 0, 0.2, 1)
+  -webkit-transform: scale(0.8)
+
+.mdc-menu--open
+  display: inline-block
+  opacity: 1
+  transform: scale(1)
+  -webkit-transform: scale(1)
+
+.mdc-menu--animating-closed
+  display: inline-block
+  opacity: 0
+  overflow-y: hidden
+  transition: opacity 0.075s linear
+
+.mdc-menu__items
+  box-sizing: border-box
+  overflow-x: hidden
+  overflow-y: auto
+  transform: scale(1)
+  will-change: transform
+  -webkit-transform: scale(1)
+
+.mdc-menu__items > .mdc-list-item
+  cursor: pointer
+
+.mdc-menu--animating .mdc-menu__items
+  overflow-y: hidden
+
+.mdc-menu--animating-open > .mdc-menu__items
+  transform: scale(1.25)
+  -webkit-transform: scale(1.25)
+
+.mdc-menu--open > .mdc-menu__items
+  transform: scale(1)
+  -webkit-transform: scale(1)
+
+[dir='rtl'] .mdc-menu
+  transform-origin: top right
+  -webkit-transform-origin: top right
+
+.mdc-menu .mdc-list-group, .mdc-menu .mdc-list
+  padding: 8px 0
+
+.mdc-menu .mdc-list-item
+  color: inherit
+  font-family: Roboto, sans-serif
+  font-size: 1rem
+  font-weight: 400
+  letter-spacing: 0.00937em
+  line-height: 1.75rem
+  outline: none
+  position: relative
+  text-decoration: inherit
+  text-decoration: none
+  text-transform: inherit
+  user-select: none
+  -moz-osx-font-smoothing: grayscale
+  -moz-user-select: none
+  -ms-user-select: none
+  -webkit-font-smoothing: antialiased
+  -webkit-user-select: none
+
+.mdc-menu .mdc-list-item__graphic
+  color: rgba(0, 0, 0, 0.54)
+  /* @alternate */
+  color: var(--mdc-theme-text-secondary-on-background, rgba(0, 0, 0, 0.54))
+
+.mdc-menu .mdc-list-item[aria-disabled='true']
+  color: rgba(0, 0, 0, 0.38)
+  /* @alternate */
+  color: var(--mdc-theme-text-disabled-on-background, rgba(0, 0, 0, 0.38))
+  cursor: default
+  pointer-events: none
+
+.mdc-menu .mdc-list-item[aria-disabled='true']:focus::before
+  opacity: 0
+
+.mdc-menu-anchor
+  overflow: visible
+  position: relative
+
+/* # sourceMappingURL=mdc.menu.css.map */

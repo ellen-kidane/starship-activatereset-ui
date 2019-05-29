@@ -1,0 +1,92 @@
+{
+  "_from": "@rally/starship-picard",
+  "_id": "@rally/starship-picard@0.0.12",
+  "_inBundle": false,
+  "_integrity": "sha1-b3SR/5OL6G5bv8KTYTRiJu4fgiI=",
+  "_location": "/@rally/starship-picard",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "@rally/starship-picard",
+    "name": "@rally/starship-picard",
+    "escapedName": "@rally%2fstarship-picard",
+    "scope": "@rally",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://artifacts.werally.in:443/artifactory/api/npm/npm/@rally/starship-picard/-/@rally/starship-picard-0.0.12.tgz",
+  "_shasum": "6f7491ff938be86e5bbfc29361346226ee1f8222",
+  "_spec": "@rally/starship-picard",
+  "_where": "/Users/ellen.kidane/code/starship-activatereset-ui",
+  "author": {
+    "name": "Rally"
+  },
+  "bugs": {
+    "url": "https://github.com/AudaxHealthInc/starship-picard-ui/issues"
+  },
+  "bundleDependencies": false,
+  "collection": "dist/collection/collection-manifest.json",
+  "dependencies": {
+    "@material/menu": "^0.35.0",
+    "material-components-web": "0.36.0"
+  },
+  "deprecated": false,
+  "description": "Stencil Components for Starship",
+  "devDependencies": {
+    "@stencil/core": "0.9.7",
+    "@stencil/dev-server": "latest",
+    "@stencil/stylus": "0.0.2",
+    "@stencil/utils": "latest",
+    "@types/jest": "^21.1.1",
+    "jest": "23.1.0",
+    "release-it": "7.4.7",
+    "tslint": "5.10.0",
+    "tslint-ionic-rules": "0.0.16"
+  },
+  "files": [
+    "dist/"
+  ],
+  "homepage": "https://github.com/AudaxHealthInc/starship-picard-ui#readme",
+  "jest": {
+    "transform": {
+      "^.+\\.(ts|tsx)$": "<rootDir>/node_modules/@stencil/core/testing/jest.preprocessor.js"
+    },
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(tsx?|jsx?)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "json",
+      "jsx"
+    ],
+    "coverageDirectory": "./coverage/",
+    "collectCoverage": true
+  },
+  "license": "UNLICENSED",
+  "main": "dist/index.js",
+  "module": "dist/esm/index.js",
+  "name": "@rally/starship-picard",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AudaxHealthInc/starship-picard-ui.git"
+  },
+  "scripts": {
+    "build": "stencil build && npm run copy:styl",
+    "copy:styl": "cp -R ./src/styles/ ./dist/styles",
+    "dev": "sd concurrent \"stencil build --dev --watch\" \"stencil-dev-server\" ",
+    "lint:ts": "tslint -p tsconfig.json -c tslint.json",
+    "release": "release-it",
+    "serve": "stencil-dev-server",
+    "start": "npm run dev",
+    "test": "jest --no-cache --runInBand",
+    "test.watch": "jest --watch --runInBand"
+  },
+  "types": "dist/types/components.d.ts",
+  "version": "0.0.12"
+}

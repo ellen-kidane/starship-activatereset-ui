@@ -1,0 +1,33 @@
+:host
+  typography-basics()
+
+  .sa-toolbar-item
+    align-items: center
+    color: $white
+    display: flex
+    font-size: 10px
+    font-weight: $weight-medium
+    height: 68px
+    justify-content: center
+    max-height: 68px
+    max-width: 97px
+    padding: 0 12px
+    position: relative
+    text-decoration: none
+    text-transform: uppercase
+    width: 97px
+
+    &.active
+      ::after
+        background-color: $orange-lighter
+        bottom: 0
+        content: ''
+        height: 6px
+        position: absolute
+        width: 97px
+
+      &:hover
+        color: $white
+
+    &:hover
+      color: $grey-40

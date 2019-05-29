@@ -1,0 +1,29 @@
+@require '../vars.styl'
+
+.card
+  background: $white
+  border: 1px solid $grey-5
+  color: $grey-60
+  font-family: $family-sans-serif
+  font-weight: $weight-medium
+  padding: $padding-16
+  word-wrap: break-word
+
+  &.is-small
+    max-height: 136px
+    max-width: 174px
+    max-width: 174px
+    min-height: 136px
+
+    .card-title
+      font-size: 0.625rem
+
+    .card-body
+      font-size: $size-14
+
+  .card-title
+    margin-bottom: 0.75rem
+    text-transform: uppercase
+
+  .card-body
+    margin: 0

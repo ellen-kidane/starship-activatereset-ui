@@ -1,0 +1,111 @@
+@require '../../styles/elements/button.styl'
+
+$modal-z ?= 40
+$modal-background-background-color ?= rgba($black, 0.05)
+$modal-card-body-background-color ?= $white
+
+.title-style
+  font-weight: normal
+  margin-bottom: 0
+  margin-top: 0
+
+:host
+  .sa-modal
+    align-items: center
+    bottom: 0
+    display: none
+    flex-direction: column
+    justify-content: center
+    left: 0
+    overflow: hidden
+    position: absolute
+    position: fixed
+    right: 0
+    top: 0
+    z-index: $modal-z
+
+    // Modifiers
+    &.is-active
+      display: flex
+
+    &.is-small
+      .sa-modal-content
+        width: 373px
+
+  .sa-modal-bg
+    background-color: $modal-background-background-color
+    bottom: 0
+    left: 0
+    position: absolute
+    right: 0
+    top: 0
+
+  .sa-modal-content
+    typography-basics()
+    background-color: white
+    box-shadow: 0 0 20px 0 $grey-5
+    box-sizing: border-box
+    color: $grey-80
+    font-size: $size-12
+    line-height: 1.65
+    padding: 32px 48px 32px 32px
+    position: relative
+    width: 529px
+
+    .primary-title
+      @extend .title-style
+      font-size: $size-18
+      line-height: 22px
+
+    .secondary-title
+      @extend .title-style
+      font-size: $size-14
+      line-height: 20px
+
+    .content
+      margin-bottom: 32px
+      margin-top: 15px
+
+    .sa-modal-footer
+      height: 32px
+      justify-content: flex-end
+      margin-top: 24px
+      text-align: right
+
+      &.buttons
+        .button
+          margin-bottom: 0
+
+    &:before
+      background-color: $grey-15
+      content: ''
+      display: block
+      height: 8px
+      left: 0
+      position: absolute
+      right: 0
+      top: 0
+      width: 100%
+
+  .sa-modal-close
+    background: none
+    border: none
+    color: $grey-15
+    cursor: pointer
+    display: block
+    height: 24px
+    padding: 0
+    position: absolute
+    right: 9px
+    top: 18px
+    width: 24px
+
+    &:focus
+      outline: none
+
+  .modal-card-body
+    background-color: $modal-card-body-background-color
+    flex-grow: 1
+    flex-shrink: 1
+    overflow: auto
+    padding: 20px

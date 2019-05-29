@@ -1,0 +1,146 @@
+@require '../vars.styl'
+
+$button-background-color ?= $teal
+$button-border ?= none
+$button-border-color ?= none
+$button-border-radius ?= 0
+$button-border-width ?= 0
+$button-box-shadow ?= none
+$button-color ?= $white
+$button-disabled-background-color ?= $grey-15
+$button-disabled-border-color ?= $grey-lighter
+$button-disabled-opacity ?= 0.25
+$button-disabled-shadow ?= none
+$button-hover-background-color ?= $dark-teal
+$button-hover-color ?= $white
+$button-focus-color ?= $white
+$button-padding-horizontal ?= 16px
+$button-padding-vertical ?= 10px
+$button-padding-horizontal-small ?= 12px
+$button-padding-vertical-small ?= 8px
+$button-text-align ?= center
+$button-text-transform ?= uppercase
+
+// to group buttons together vertically and horizontally
+.buttons
+  align-items: center
+  display: flex
+  flex-wrap: wrap
+  justify-content: flex-start
+
+  .button
+    margin-bottom: 0.5rem
+
+    &:not(:last-child)
+      margin-right: 1rem
+
+  &:last-child
+    margin-bottom: -0.5rem
+
+  &:not(:last-child)
+    margin-bottom: 1rem
+
+  &.is-centered
+    justify-content: center
+
+  &.is-right
+    justify-content: flex-end
+
+.button
+  background-color: $button-background-color
+  border: $button-border
+  border-color: $button-border-color
+  border-radius: $button-border-radius
+  border-width: $button-border-width
+  box-shadow: $button-box-shdadow
+  color: $button-color
+  cursor: pointer
+  display: inline-flex
+  font-family: $family-sans-serif
+  font-size: $size-11
+  font-weight: $weight-normal
+  justify-content: center
+  padding: $button-padding-vertical $button-padding-horizontal
+  position: relative
+  text-align: $button-text-align
+  text-transform: $button-text-transform
+  user-select: none
+  white-space: nowrap
+
+  // States
+  &:hover, &.is-hovered
+    background-color: $button-hover-background-color
+    border-color: $button-hover-border-color
+    color: $button-hover-color
+
+  &:focus, &.is-focused
+    color: $button-focus-color
+    outline: none
+
+  // Sizes
+  &.is-small
+    font-size: $size-10
+    padding-bottom: $button-padding-vertical-small
+    padding-left: $button-padding-horizontal-small
+    padding-right: $button-padding-horizontal-small
+    padding-top: $button-padding-vertical-small
+
+  // Modifiers
+  &[disabled]
+    background-color: $button-disabled-background-color !important
+    border-color: $button-disabled-border-color
+    box-shadow: $button-disabled-shadow
+    cursor: not-allowed
+
+  &.is-text
+    background-color: transparent !important
+    border-color: transparent
+    color: $grey-60
+    font-size: $size-12
+    font-weight: $weight-bold
+    padding: 0
+    text-decoration: none
+
+    &:hover, &.is-hovered, &:focus, &.is-focused
+      color: $grey-80
+
+    &[disabled]
+      background-color: transparent !important
+      border-color: transparent
+      box-shadow: none
+      color: $grey-15 !important
+
+  &.is-secondary
+    background-color: $secondary
+
+    &:hover, &.is-hovered
+      background-color: $secondary-dark
+
+  &.is-tertiary
+    background-color: $tertiary
+
+    &:hover, &.is-hovered
+      background-color: $tertiary-dark
+
+  &.is-secondary, &.is-tertiary
+    border-color: transparent
+    color: $white
+
+    &:hover, &.is-hovered
+      border-color: transparent
+      color: $white
+
+    &:focus, &.is-focused
+      border-color: transparent
+      color: $white
+
+    &:active, &.is-active
+      border-color: transparent
+      color: $white
+
+    &.is-text
+      background-color: transparent !important
+      color: $grey-60
+
+      &:hover
+        color: $grey-80

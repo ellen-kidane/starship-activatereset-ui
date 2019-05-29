@@ -1,0 +1,525 @@
+{
+  "components": [
+    {
+      "tag": "sa-card-complex",
+      "dependencies": [],
+      "componentClass": "CardComplex",
+      "componentPath": "components/card-complex/card-complex.js",
+      "styles": {
+        "$": {
+          "stylePaths": [
+            "components/card-complex/card-complex.styl"
+          ]
+        }
+      },
+      "props": [
+        {
+          "name": "hasFooter",
+          "type": "Boolean",
+          "attr": "has-footer"
+        },
+        {
+          "name": "headerTitle",
+          "type": "String",
+          "attr": "header-title"
+        }
+      ],
+      "shadow": true
+    },
+    {
+      "tag": "sa-chrome",
+      "dependencies": [
+        "sa-footer",
+        "sa-toolbar"
+      ],
+      "componentClass": "Chrome",
+      "componentPath": "components/chrome/chrome.js",
+      "styles": {
+        "$": {
+          "stylePaths": [
+            "components/chrome/chrome.styl"
+          ]
+        }
+      },
+      "props": [
+        {
+          "name": "env",
+          "type": "String",
+          "attr": "env"
+        },
+        {
+          "name": "hasNav",
+          "type": "Boolean",
+          "attr": "has-nav"
+        },
+        {
+          "name": "hasSecondaryTool",
+          "type": "Boolean",
+          "attr": "has-secondary-tool"
+        },
+        {
+          "name": "hasTool",
+          "type": "Boolean",
+          "attr": "has-tool"
+        },
+        {
+          "name": "menuItems",
+          "type": "String",
+          "attr": "menu-items"
+        },
+        {
+          "name": "secondaryToolName",
+          "type": "String",
+          "attr": "secondary-tool-name"
+        },
+        {
+          "name": "toolName",
+          "type": "String",
+          "attr": "tool-name"
+        },
+        {
+          "name": "url",
+          "type": "String",
+          "attr": "url"
+        },
+        {
+          "name": "username",
+          "type": "String",
+          "attr": "username"
+        }
+      ],
+      "listeners": [
+        {
+          "event": "menuItemSelected",
+          "method": "menuItemSelectedHandler",
+          "passive": false,
+          "capture": false
+        }
+      ],
+      "events": [
+        {
+          "event": "menuItemSelectedFromChrome"
+        }
+      ],
+      "shadow": true
+    },
+    {
+      "tag": "sa-footer",
+      "dependencies": [],
+      "componentClass": "Footer",
+      "componentPath": "components/footer/footer.js",
+      "styles": {
+        "$": {
+          "stylePaths": [
+            "components/footer/footer.styl"
+          ]
+        }
+      },
+      "shadow": true
+    },
+    {
+      "tag": "sa-image-uploader",
+      "dependencies": [],
+      "componentClass": "ImageUploader",
+      "componentPath": "components/image-uploader/image-uploader.js",
+      "styles": {
+        "$": {
+          "stylePaths": [
+            "components/image-uploader/image-uploader.styl"
+          ]
+        }
+      },
+      "props": [
+        {
+          "name": "byteSizeLimit",
+          "type": "Number",
+          "attr": "byte-size-limit"
+        },
+        {
+          "name": "imageUrl",
+          "type": "String",
+          "attr": "image-url"
+        },
+        {
+          "name": "isDraggable",
+          "type": "Boolean",
+          "attr": "is-draggable"
+        },
+        {
+          "name": "sizeLimitText",
+          "type": "String",
+          "attr": "size-limit-text"
+        },
+        {
+          "name": "uploadButtonText",
+          "type": "String",
+          "attr": "upload-button-text"
+        }
+      ],
+      "states": [
+        {
+          "name": "fileName"
+        },
+        {
+          "name": "uploaded"
+        }
+      ],
+      "hostElement": {
+        "name": "uploaderEl"
+      },
+      "events": [
+        {
+          "event": "imageUploaderOnUpload"
+        },
+        {
+          "event": "removeImage"
+        }
+      ],
+      "shadow": true
+    },
+    {
+      "tag": "sa-modal",
+      "dependencies": [],
+      "componentClass": "Modal",
+      "componentPath": "components/modal/modal.js",
+      "styles": {
+        "$": {
+          "stylePaths": [
+            "components/modal/modal.styl"
+          ]
+        }
+      },
+      "props": [
+        {
+          "name": "hasActions",
+          "type": "Boolean",
+          "attr": "has-actions"
+        },
+        {
+          "name": "id",
+          "type": "String",
+          "attr": "id"
+        },
+        {
+          "name": "isSmall",
+          "type": "Boolean",
+          "attr": "is-small"
+        },
+        {
+          "name": "primaryActionText",
+          "type": "String",
+          "attr": "primary-action-text"
+        },
+        {
+          "name": "primaryDisabled",
+          "type": "Boolean",
+          "attr": "primary-disabled"
+        },
+        {
+          "name": "primaryTitle",
+          "type": "String",
+          "attr": "primary-title"
+        },
+        {
+          "name": "secondaryActionText",
+          "type": "String",
+          "attr": "secondary-action-text"
+        },
+        {
+          "name": "secondaryDisabled",
+          "type": "Boolean",
+          "attr": "secondary-disabled"
+        },
+        {
+          "name": "secondaryTitle",
+          "type": "String",
+          "attr": "secondary-title"
+        }
+      ],
+      "states": [
+        {
+          "name": "isActive"
+        }
+      ],
+      "methods": [
+        {
+          "name": "closeModal"
+        },
+        {
+          "name": "launchModal"
+        }
+      ],
+      "events": [
+        {
+          "event": "modalClosed"
+        },
+        {
+          "event": "modalPrimaryAction"
+        },
+        {
+          "event": "modalSecondaryAction"
+        }
+      ],
+      "shadow": true
+    },
+    {
+      "tag": "sa-toolbar",
+      "dependencies": [
+        "sa-toolbar-divider",
+        "sa-toolbar-env",
+        "sa-toolbar-logo",
+        "sa-toolbar-menu",
+        "sa-toolbar-tool-name",
+        "sa-toolbar-user"
+      ],
+      "componentClass": "Toolbar",
+      "componentPath": "components/toolbar/toolbar.js",
+      "styles": {
+        "$": {
+          "stylePaths": [
+            "components/toolbar/toolbar.styl"
+          ]
+        }
+      },
+      "props": [
+        {
+          "name": "env",
+          "type": "String",
+          "attr": "env"
+        },
+        {
+          "name": "hasNav",
+          "type": "Boolean",
+          "attr": "has-nav"
+        },
+        {
+          "name": "hasSecondaryTool",
+          "type": "Boolean",
+          "attr": "has-secondary-tool"
+        },
+        {
+          "name": "hasTool",
+          "type": "Boolean",
+          "attr": "has-tool"
+        },
+        {
+          "name": "menuItems",
+          "type": "String",
+          "attr": "menu-items"
+        },
+        {
+          "name": "secondaryTool",
+          "type": "String",
+          "attr": "secondary-tool"
+        },
+        {
+          "name": "tool",
+          "type": "String",
+          "attr": "tool"
+        },
+        {
+          "name": "url",
+          "type": "String",
+          "attr": "url"
+        },
+        {
+          "name": "username",
+          "type": "String",
+          "attr": "username"
+        }
+      ],
+      "listeners": [
+        {
+          "event": "selected",
+          "method": "menuItemSelectedHandler",
+          "passive": false,
+          "capture": false
+        }
+      ],
+      "events": [
+        {
+          "event": "menuItemSelected"
+        }
+      ],
+      "shadow": true
+    },
+    {
+      "tag": "sa-toolbar-divider",
+      "dependencies": [],
+      "componentClass": "ToolbarDivider",
+      "componentPath": "components/toolbar-divider/toolbar-divider.js",
+      "styles": {
+        "$": {
+          "stylePaths": [
+            "components/toolbar-divider/toolbar-divider.styl"
+          ]
+        }
+      },
+      "shadow": true
+    },
+    {
+      "tag": "sa-toolbar-env",
+      "dependencies": [],
+      "componentClass": "ToolbarEnv",
+      "componentPath": "components/toolbar-env/toolbar-env.js",
+      "styles": {
+        "$": {
+          "stylePaths": [
+            "components/toolbar-env/toolbar-env.styl"
+          ]
+        }
+      },
+      "props": [
+        {
+          "name": "env",
+          "type": "String",
+          "attr": "env"
+        }
+      ],
+      "shadow": true
+    },
+    {
+      "tag": "sa-toolbar-item",
+      "dependencies": [],
+      "componentClass": "ToolbarItem",
+      "componentPath": "components/toolbar-item/toolbar-item.js",
+      "styles": {
+        "$": {
+          "stylePaths": [
+            "components/toolbar-item/toolbar-item.styl"
+          ]
+        }
+      },
+      "props": [
+        {
+          "name": "isActive",
+          "type": "Boolean",
+          "attr": "is-active"
+        },
+        {
+          "name": "url",
+          "type": "String",
+          "attr": "url"
+        }
+      ],
+      "shadow": true
+    },
+    {
+      "tag": "sa-toolbar-logo",
+      "dependencies": [],
+      "componentClass": "ToolbarLogo",
+      "componentPath": "components/toolbar-logo/toolbar-logo.js",
+      "styles": {
+        "$": {
+          "stylePaths": [
+            "components/toolbar-logo/toolbar-logo.styl"
+          ]
+        }
+      },
+      "props": [
+        {
+          "name": "url",
+          "type": "String",
+          "attr": "url"
+        }
+      ],
+      "shadow": true
+    },
+    {
+      "tag": "sa-toolbar-menu",
+      "dependencies": [],
+      "componentClass": "ToolbarMenu",
+      "componentPath": "components/toolbar-menu/toolbar-menu.js",
+      "styles": {
+        "$": {
+          "stylePaths": [
+            "components/toolbar-menu/toolbar-menu.styl"
+          ]
+        }
+      },
+      "props": [
+        {
+          "name": "menuItems",
+          "type": "String",
+          "attr": "menu-items"
+        }
+      ],
+      "states": [
+        {
+          "name": "open"
+        }
+      ],
+      "hostElement": {
+        "name": "menuEl"
+      },
+      "events": [
+        {
+          "event": "selected"
+        }
+      ]
+    },
+    {
+      "tag": "sa-toolbar-nav",
+      "dependencies": [],
+      "componentClass": "ToolbarNav",
+      "componentPath": "components/toolbar-nav/toolbar-nav.js",
+      "styles": {
+        "$": {
+          "stylePaths": [
+            "components/toolbar-nav/toolbar-nav.styl"
+          ]
+        }
+      },
+      "shadow": true
+    },
+    {
+      "tag": "sa-toolbar-tool-name",
+      "dependencies": [],
+      "componentClass": "ToolbarToolName",
+      "componentPath": "components/toolbar-tool-name/toolbar-tool-name.js",
+      "styles": {
+        "$": {
+          "stylePaths": [
+            "components/toolbar-tool-name/toolbar-tool-name.styl"
+          ]
+        }
+      },
+      "props": [
+        {
+          "name": "tool",
+          "type": "String",
+          "attr": "tool"
+        }
+      ],
+      "shadow": true
+    },
+    {
+      "tag": "sa-toolbar-user",
+      "dependencies": [],
+      "componentClass": "ToolbarUser",
+      "componentPath": "components/toolbar-user/toolbar-user.js",
+      "styles": {
+        "$": {
+          "stylePaths": [
+            "components/toolbar-user/toolbar-user.styl"
+          ]
+        }
+      },
+      "props": [
+        {
+          "name": "username",
+          "type": "String",
+          "attr": "username"
+        }
+      ],
+      "shadow": true
+    }
+  ],
+  "collections": [],
+  "compiler": {
+    "name": "@stencil/core",
+    "version": "0.9.7",
+    "typescriptVersion": "2.9.1"
+  },
+  "bundles": []
+}
