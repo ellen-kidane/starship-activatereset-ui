@@ -1,26 +1,51 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
+import { Router } from '@reach/router';
+import Home from './components/Home';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+class App extends Component {
+  env = 'dev';
+  engineUrl = 'rallyengine.dev.werally.in';
+  toolName = 'Activate Reset';
+  menuItems = 'Logout';
+  chromeRef = null;
+
+  constructor(props) {
+    super(props);
+    this.chromeRef = React.createRef();
+  }
+
+  render() {
+    const isLoggedIn = true;
+    const userInfo = {
+      username: 'test.user',
+      email: 'test@rallyhealth.com'
+    }
+
+    return (
+      isLoggedIn && (
+        <sa-chrome
+          ref={this.chromeRef}
+          url={this.engineUrl}
+          tool-name={this.toolName}
+          env={this.env}
+          username={userInfo.username}
+          menu-items={this.menuItems}
         >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+          <sa-toolbar-nav slot="main-nav">
+            <sa-toolbar-item is-active="true">
+              Reset Activate User
+            </sa-toolbar-item>
+          </sa-toolbar-nav>
+          <main className="content">
+            <Router>
+              <Home path="/" />
+            </Router>
+          </main>
+        </sa-chrome>
+      )
+    );
+  }
 }
 
 export default App;

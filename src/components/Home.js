@@ -1,6 +1,25 @@
 import React, { Component } from 'react';
 
 class Home extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {input: '', inputList: []};
+
+    // This binding is necessary to make `this` work in the callback
+    this.handleChange = this.handleChange.bind(this);
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleChange(e) {
+    this.setState({ input: e.target.value });
+  };
+
+  handleClick() {
+    var inputAsList = (this.state.input).split(',');
+    this.setState({ inputList: inputAsList });
+  }
+
   render() {
     return (
       <div className="home">
@@ -17,15 +36,15 @@ class Home extends Component {
         </div>
 
         { /* place to input the rallyid(s) */ }
-        <p>Please enter the rallyid(s) of the user(s) that need to be reset in the box below:</p>
-        <textarea rows="25" cols="200"/>
-        <div> <button type="submit">Reset These Users</button> </div>
+        <p>Enter rallyIDs below (separate by commas please - but no spaces):</p>
+        <textarea value={this.state.input} onChange={this.handleChange} rows="25" cols="170"/>
+        <div> <button onClick={this.handleClick}>Reset These Users</button> </div>
 
         { /* place to display the results */ }
         <div>
             <br/>
             <p>Sample results:</p>
-            <ul>
+            <ul style={{border: '0.5px solid black', paddingBottom : '5px', width: '1000px'}}>
                 <li>rallyID here - successful reset</li>
                 <li>another rallyID - failed reset</li>
                 <li>another rallyID - successful reset</li>
@@ -36,7 +55,9 @@ class Home extends Component {
                 <li>another rallyID - successful reset</li>
                 <li>another rallyID - successful reset</li>
                 <li>another rallyID - successful reset</li>
-                { /* rallyID: success/failure */ }
+                { this.state.inputList.map(item => (
+                    <li>{item}</li>
+                ))}
             </ul>
         </div>
 
