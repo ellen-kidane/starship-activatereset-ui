@@ -8,6 +8,7 @@
     "@rally/starship-picard": "0.0.12",
     "@reach/router": "^1.2.1",
     "axios": "^0.18.0",
+    "cors": "^2.8.5",
     "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.13.2",
     "http-proxy-middleware": "^0.19.1",
